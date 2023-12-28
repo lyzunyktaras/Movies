@@ -1,0 +1,62 @@
+a,
+button {
+  &.movie-list-button {
+    &[mat-button],
+    &[mat-raised-button],
+    &[mat-stroked-button],
+    &[mat-flat-button] {
+      background: #2BD17E;
+      height: 54px;
+      border-radius: 10px;
+      color: white;
+
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+a,
+button {
+  &.movie-list-stroked-button {
+    &[mat-button],
+    &[mat-raised-button],
+    &[mat-stroked-button],
+    &[mat-flat-button] {
+      background: #093545;
+      height: 54px;
+      border-radius: 10px;
+      border: 1px solid #FFFFFF;
+      color: white;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.mat-mdc-text-field-wrapper .mdc-line-ripple::before {
+  border: 0;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  background: #224957 !important;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 18px;
+}
+
+.mat-mdc-text-field-wrapper
+.mat-mdc-form-field-flex
+.mat-mdc-form-field-infix
+.mat-mdc-form-field-input-control,
+.mat-mdc-text-field-wrapper
+.mat-mdc-form-field-flex
+.mat-mdc-form-field-infix
+.mdc-floating-label {
+  color: #FFFFFF;
+}

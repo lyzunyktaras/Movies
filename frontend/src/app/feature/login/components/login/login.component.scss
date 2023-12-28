@@ -1,0 +1,33 @@
+.login {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__input-field {
+    width: 300px;
+  }
+
+  &__button-actions {
+    width: 300px;
+    display: flex;
+    gap: 16px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  &__login-button {
+    width: 70%;
+  }
+
+  &__sign-button {
+    width: 30%;
+  }
+
+  &__title {
+    color: #FFFFFF;
+  }
+}

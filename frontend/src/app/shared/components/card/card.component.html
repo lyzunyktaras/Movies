@@ -1,0 +1,10 @@
+<div class="card">
+  <img [src]="movie.image" alt="Movie photo" class="card__image">
+  <div class="card__edit">
+    <p class="font-20 p-8 f-w-500 font-20">{{movie.title}}</p>
+    <button class="card__edit-button" mat-button (click)="navigate(movie)">
+      <mat-icon> edit </mat-icon>
+    </button>
+  </div>
+  <p class="font-14 p-8 f-w-400 font-14">{{movie.year}}</p>
+</div>

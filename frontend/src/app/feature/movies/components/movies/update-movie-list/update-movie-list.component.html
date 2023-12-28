@@ -1,0 +1,53 @@
+<div class="update-movie">
+  <div class="update-movie__header">
+    <div class="update-movie__title">
+      <h1 class="font-48 update-movie__title" *ngIf="!edit">Create a new movie</h1>
+      <h1 class="font-48 update-movie__title" *ngIf="edit">Edit</h1>
+    </div>
+    <div class="update-movie__delete-icon" *ngIf="edit">
+      <mat-icon (click)="deleteMovie()">delete</mat-icon>
+    </div>
+  </div>
+  <div class="update-movie__content m-t-56" *ngIf="!isDekstop; else mobileTemplate">
+    <div class="update-movie__left-side">
+      <app-upload-image (image)="submitPhoto($event)"></app-upload-image>
+    </div>
+    <form class="update-movie__right-side" [formGroup]="updateForm">
+      <mat-form-field class="movie-list-button">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title">
+          <mat-error>
+            <span *ngIf="updateForm.controls.title.errors?.required">Title required</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="movie-list-button update-inputs__input-width">
+        <mat-label>Publishing year</mat-label>
+        <input matInput type="number" formControlName="year">
+          <mat-error>
+            <span *ngIf="updateForm.controls.year.errors?.required">Year required</span>
+          </mat-error>
+      </mat-form-field>
+      <app-action-buttons [edit]="edit" (submit)="createUpdateMovie()"></app-action-buttons>
+    </form>
+  </div>
+  <ng-template #mobileTemplate>
+    <form class="m-t-56 update-movie__mobile-template" [formGroup]="updateForm">
+      <mat-form-field class="movie-list-button">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title">
+          <mat-error>
+            <span *ngIf="updateForm.controls.title.errors?.required">Title required</span>
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field class="movie-list-button update-inputs__input-width">
+        <mat-label>Publishing year</mat-label>
+        <input matInput type="number" formControlName="year">
+          <mat-error>
+            <span *ngIf="updateForm.controls.year.errors?.required">Year required</span>
+          </mat-error>
+      </mat-form-field>
+      <app-upload-image></app-upload-image>
+      <app-action-buttons [edit]="edit" (submit)="createUpdateMovie()"></app-action-buttons>
+    </form>
+  </ng-template>
+</div>

@@ -1,0 +1,30 @@
+<div class="movies">
+  <ng-container *ngIf="movies.length; else noTemplate">
+    <div class="movies__header">
+      <div class="movies__header-left-side">
+        <h1 class="font-48">My Movies</h1>
+        <img src="assets/images/add_circle_outline_black_24dp%201.svg" alt="Add movie" [routerLink]="['/movies/update-movie-list']">
+      </div>
+      <div class="movies__header-right-side">
+        <h1 class="font-16 movies__logout">Logout</h1>
+        <img src="assets/images/logout_black_24dp%201.svg" alt="Logout" (click)="logout()">
+      </div>
+    </div>
+    <div class="movies__content m-t-56">
+        <app-card *ngFor="let movie of visibleItems.items" [movie]="movie" class="movies__cards m-t-16"></app-card>
+    </div>
+    <div class="movies__paginator mt-24">
+      <app-paginator
+        [total]="movies.length"
+        [pageSize]="8"
+        (valueChange)="onPageChange($event)">>
+      </app-paginator>
+    </div>
+  </ng-container>
+  <ng-template #noTemplate>
+    <div class="movies__no-template">
+      <h1 class="font-48 m-b-40 f-w-600">Your movie list is empty</h1>
+      <button mat-button class="movie-list-button f-w-700 p-t-16 p-b-16 p-l-28 p-r-28" [routerLink]="['/movies/update-movie-list']">Add a new movie</button>
+    </div>
+  </ng-template>
+</div>

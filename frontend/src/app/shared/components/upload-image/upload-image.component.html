@@ -1,0 +1,16 @@
+<div class="uploader-image">
+  <ngx-dropzone *ngIf="!isUploaded; else cropper" type="file" class="uploader-image__upload-image" (change)="fileChanged($event)">
+    <ngx-dropzone-label>Upload an image here</ngx-dropzone-label>
+  </ngx-dropzone>
+</div>
+
+<ng-template #cropper>
+  <image-cropper
+    format="png"
+    [imageFile]="imageChangedEvent?.addedFiles[0]"
+    [onlyScaleDown]="true"
+    (imageCropped)="imageCropped($event)"
+    (loadImageFailed)="loadImageFailed()"
+  ></image-cropper>
+  <button mat-button (click)="isUploaded = false" class="movie-list-stroked-button uploader-image__uploader-button m-t-16">Cancel</button>
+</ng-template>

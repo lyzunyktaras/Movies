@@ -1,0 +1,28 @@
+.pagination {
+  &__next-page {
+    background: inherit;
+    color: #FFFFFF;
+    border: #092C39;
+    cursor: pointer;
+  }
+
+  &__select-page {
+    cursor: pointer;
+    margin: 0 4px;
+    background: #092C39;
+    border: 0;
+    border-radius: 4px;
+    height: 32px;
+    width: 32px;
+    color: #FFFFFF;
+  }
+}
+
+.selected {
+  color: #FFFFFF;
+  background: #2BD17E;
+  border: 0;
+  border-radius: 4px;
+  height: 32px;
+  width: 32px;
+}

@@ -1,0 +1,19 @@
+<div class="pagination">
+  <button
+    class="pagination__next-page f-w-700"
+    [disabled]="value === 1"
+    (click)="selectPage(1)">
+    Prev
+  </button>
+  <button
+    class="pagination__select-page"
+    *ngFor="let page of visiblePages"
+    [ngClass]="value === page && 'selected'"
+    (click)="selectPage(page)">
+    {{ page }}
+  </button>
+  <button
+    class="pagination__next-page f-w-700"
+    [disabled]="value === totalPages"
+    (click)="selectPage(totalPages)"> Next </button>
+</div>

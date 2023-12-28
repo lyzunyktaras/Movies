@@ -1,0 +1,7 @@
+<div class="actions-button m-t-32">
+  <button mat-button class="movie-list-stroked-button" routerLink="/movies">Cancel</button>
+  <button mat-button class="movie-list-button" (click)="submitPhoto()">
+    <span *ngIf="!edit">Confirm</span>
+    <span *ngIf="edit">Update</span>
+  </button>
+</div>

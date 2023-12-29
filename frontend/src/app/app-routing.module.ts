@@ -11,6 +11,7 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: () => import('./feature/movies/movies.module').then((m) => m.MoviesModule),
+    canActivate: [authGuard]
   },
   { path: '**', redirectTo: 'login' },
 ];

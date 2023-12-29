@@ -1,30 +1,23 @@
 .card{
-  width: 358px;
   background: #092C39;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
-
-  @media screen and (max-width: 768px) {
-    width: 200px;
-  }
-
-  @media screen and (max-width: 599px) {
-    width: 380px;
-    justify-content: center;
-  }
+  height: 100%;
 
   &__image {
     border-radius: 16px;
-    height: 280px;
     width: 100%
   }
 
   img {
+    height: 80%;
+    object-fit: cover;
     padding: 8px;
   }
 
   p {
+    height: 10%;
     color: white;
   }
 

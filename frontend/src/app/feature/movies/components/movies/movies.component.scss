@@ -1,6 +1,5 @@
 .movies {
   padding: 5%;
-  height: 100%;
 
   h1 {
     margin-right: 12px;
@@ -9,6 +8,13 @@
 
   img {
     cursor: pointer;
+  }
+
+  &__title {
+    font-size: 48px;
+    @media screen and (max-width: 599px) {
+      font-size: 28px;
+    }
   }
 
   &__paginator {
@@ -41,7 +47,7 @@
   }
 
   &__no-template {
-    height: 90%;
+    height: calc(75dvh - 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,12 +64,12 @@
   }
 
   &__cards {
-    height: 50%;
-    @media screen and (max-width: 959px) {
-      height: 40%;
+    width: calc(25% - 2%);
+    @media screen and (max-width: 768px) {
+      width: calc(50% - 2%);
     }
     @media screen and (max-width: 599px) {
-      height: 95%;
+      width: 100%;
     }
   }
 }

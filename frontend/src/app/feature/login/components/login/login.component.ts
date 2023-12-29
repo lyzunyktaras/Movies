@@ -39,6 +39,7 @@ export class LoginComponent implements OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (response) => {
+            this.authService.loggedIn.next(true)
             this.authService.saveToken(response.data);
             this.router.navigateByUrl('/movies').then();
           },

@@ -49,10 +49,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((response) => {
         this.movies = response.data;
-        this.visibleItems = {
+    this.visibleItems = {
           items: response.data.slice(0, this.pageSize),
           total: response.data.length
-        }
+    }
       })
   }
 

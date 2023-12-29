@@ -1,5 +1,5 @@
 .update-movie {
-  height: 100%;
+  height: calc(100dvh - 40px);
   padding: 5%;
 
   &__title {
@@ -37,6 +37,15 @@
 
   &__mobile-template {
     height: 40%;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-width {
+    width: 70%;
   }
 }
 

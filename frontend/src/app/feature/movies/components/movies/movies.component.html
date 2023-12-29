@@ -2,7 +2,8 @@
   <ng-container *ngIf="movies.length; else noTemplate">
     <div class="movies__header">
       <div class="movies__header-left-side">
-        <h1 class="font-48">My Movies</h1>
+        <h1 class="movies__title
+        ">My Movies</h1>
         <img src="assets/images/add_circle_outline_black_24dp%201.svg" alt="Add movie" [routerLink]="['/movies/update-movie-list']">
       </div>
       <div class="movies__header-right-side">
@@ -13,7 +14,7 @@
     <div class="movies__content m-t-56">
         <app-card *ngFor="let movie of visibleItems.items" [movie]="movie" class="movies__cards m-t-16"></app-card>
     </div>
-    <div class="movies__paginator mt-24">
+    <div class="movies__paginator m-t-16 m-b-16">
       <app-paginator
         [total]="movies.length"
         [pageSize]="8"
